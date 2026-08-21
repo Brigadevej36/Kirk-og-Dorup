@@ -47,6 +47,21 @@ h1 em{color:var(--gold);font-weight:500}
 .producer-kicker{text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--muted);margin-bottom:36px}
 .producer-card h3{font-family:"Playfair Display",serif;font-size:34px;font-weight:500;margin-bottom:24px}
 .producer-card>p:last-child{max-width:480px;line-height:1.8;color:var(--muted);margin-bottom:0}
+.producer-card.featured{grid-column:1/-1;padding:52px}
+.producer-card.featured h3{font-size:clamp(38px,4vw,58px);margin-bottom:42px}
+.producer-overview{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding-bottom:44px}
+.producer-overview h4,.cuvee h4{font-family:"Playfair Display",serif;font-size:25px;font-weight:500;margin:0 0 16px}
+.producer-overview p,.cuvee>p{line-height:1.75;color:var(--muted)}
+.cuvee-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.cuvee{padding:40px 42px 0 0}
+.cuvee+.cuvee{border-left:1px solid var(--line);padding-left:42px;padding-right:0}
+.cuvee-number{font-family:"Playfair Display",serif;color:var(--gold)!important;font-size:13px}
+.cuvee-type{text-transform:uppercase;letter-spacing:.14em;font-size:10px;color:var(--muted)}
+.cuvee dl{margin:28px 0 0;border-top:1px solid var(--line)}
+.cuvee dl div{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}
+.cuvee dt{text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.cuvee dd{margin:0}
+.faq-list a{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
 .prices{background:var(--paper)}
 .price-table{border-top:1px solid var(--line)}
 .price-row{display:grid;grid-template-columns:1.1fr 1fr 1fr .8fr;gap:24px;align-items:center;min-height:82px;border-bottom:1px solid var(--line);font-size:14px}
@@ -83,4 +98,4 @@ footer p{color:var(--muted);margin:8px 0 0}
 .footer-links a{color:var(--muted)}
 .footer-links a:hover{color:var(--ink)}
 @media(max-width:960px){nav{gap:14px;font-size:10px}.faq{grid-template-columns:1fr;gap:40px}.newsletter{grid-template-columns:1fr;gap:35px}}
-@media(max-width:800px){.site-header{position:static}nav{display:none}.hero{grid-template-columns:1fr;padding-top:70px}.hero-emblem{padding:25px 0}.statement-grid{grid-template-columns:1fr;gap:15px}.section-heading{display:block}.section-heading .muted{margin-top:20px}.producer-grid{grid-template-columns:1fr}.producer-card{min-height:auto}.price-head{display:none}.price-row{grid-template-columns:1fr 1fr;gap:8px 20px;padding:22px 0}.price-row strong{font-size:19px}.price-row span:nth-child(3),.price-row span:nth-child(4){color:var(--muted);font-size:12px}.newsletter-form{display:block;border:0}.newsletter-form input{width:100%;border-bottom:1px solid var(--gold)}.newsletter-form button{padding-left:0;margin-top:8px}footer{grid-template-columns:1fr;align-items:start;gap:22px}}
+@media(max-width:800px){.producer-card.featured{padding:34px 24px}.producer-overview,.cuvee-grid{grid-template-columns:1fr;gap:25px}.cuvee+.cuvee{border-left:0;border-top:1px solid var(--line);padding:34px 0 0}.cuvee{padding:34px 0 0}.site-header{position:static}nav{display:none}.hero{grid-template-columns:1fr;padding-top:70px}.hero-emblem{padding:25px 0}.statement-grid{grid-template-columns:1fr;gap:15px}.section-heading{display:block}.section-heading .muted{margin-top:20px}.producer-grid{grid-template-columns:1fr}.producer-card{min-height:auto}.price-head{display:none}.price-row{grid-template-columns:1fr 1fr;gap:8px 20px;padding:22px 0}.price-row strong{font-size:19px}.price-row span:nth-child(3),.price-row span:nth-child(4){color:var(--muted);font-size:12px}.newsletter-form{display:block;border:0}.newsletter-form input{width:100%;border-bottom:1px solid var(--gold)}.newsletter-form button{padding-left:0;margin-top:8px}footer{grid-template-columns:1fr;align-items:start;gap:22px}}
