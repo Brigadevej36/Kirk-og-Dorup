@@ -18,8 +18,10 @@
     </a>
     <nav aria-label="Primær navigation">
       <a href="#om">Om os</a>
-      <a href="#vine">Vine</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#producenter">Producenter</a>
+      <a href="#prisliste">Prisliste</a>
+      <a href="#faq">FAQ</a>
+      <a href="#nyhedsbrev">Nyhedsbrev</a>
     </nav>
   </header>
 
@@ -30,8 +32,8 @@
         <h1>Champagne fra huse,<br><em>vi kender.</em></h1>
         <p class="intro">Vi importerer små mængder champagne fra selvstændige producenter, vi selv har besøgt, smagt hos og valgt med omhu.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#vine">Se vores udvalg</a>
-          <a class="button text" href="#om">Historien bag →</a>
+          <a class="button primary" href="#producenter">Mød producenterne</a>
+          <a class="button text" href="#prisliste">Se prislisten →</a>
         </div>
       </div>
       <div class="hero-emblem" aria-hidden="true">
@@ -43,68 +45,127 @@
     </section>
 
     <section class="statement" id="om">
-      <p class="section-label">Vores tilgang</p>
+      <p class="section-label">Om Kirk &amp; Dørup</p>
       <h2>Ikke de største huse.<br>De rigtige.</h2>
       <div class="statement-grid">
-        <p>Vi leder efter champagne med personlighed, præcision og en klar historie om stedet og menneskene bag.</p>
-        <p>Kirk &amp; Dørup er et lille importprojekt drevet af nysgerrighed og kærlighed til Champagne. Sortimentet er bevidst smalt, og vi køber kun vin, vi selv har lyst til at drikke.</p>
+        <p>Vi leder efter champagne med personlighed, præcision og en klar historie om stedet og menneskene bag. Derfor tager vi selv til Champagne, møder producenterne og smager os frem.</p>
+        <p>Kirk &amp; Dørup er et lille importprojekt drevet af nysgerrighed, gode måltider og kærlighed til vin. Sortimentet er bevidst smalt. Vi importerer kun flasker, vi selv har lyst til at åbne.</p>
       </div>
     </section>
 
-    <section class="wines" id="vine">
+    <section class="producers" id="producenter">
       <div class="section-heading">
         <div>
-          <p class="section-label">På lager</p>
-          <h2>Udvalgte flasker</h2>
+          <p class="section-label">Producenter</p>
+          <h2>Fire huse.<br>Fire udtryk.</h2>
         </div>
-        <p class="muted">Sortimentet ændrer sig løbende og fås i begrænsede mængder.</p>
+        <p class="muted">Små, selvstændige producenter med hver deres stil, terroir og historie.</p>
       </div>
+      <div class="producer-grid">
+        <article class="producer-card">
+          <span class="card-number">01</span>
+          <p class="producer-kicker">Champagne</p>
+          <h3>Clément Bertrand</h3>
+          <p>Et personligt og karakterfuldt udtryk med særlig styrke i Meunier. Narcevignes er husets 100% Meunier-cuvée.</p>
+        </article>
+        <article class="producer-card">
+          <span class="card-number">02</span>
+          <p class="producer-kicker">Champagne</p>
+          <h3>Stéphane Herbert</h3>
+          <p>Præcise og elegante vine med fokus på friskhed, mineralitet og Chardonnay.</p>
+        </article>
+        <article class="producer-card">
+          <span class="card-number">03</span>
+          <p class="producer-kicker">Champagne</p>
+          <h3>A&amp;C Toullec</h3>
+          <p>Små cuvéer med tydelig identitet, balance og et terroir-drevet udtryk.</p>
+        </article>
+        <article class="producer-card">
+          <span class="card-number">04</span>
+          <p class="producer-kicker">Champagne</p>
+          <h3>Couvreur Fondeur</h3>
+          <p>Lille produktion, personlig stil og vine med både energi og dybde.</p>
+        </article>
+      </div>
+    </section>
 
-      <div class="wine-grid">
-        <article class="wine-card">
-          <span class="wine-number">01</span>
-          <div>
-            <p class="producer">Clément Bertrand</p>
-            <h3>Narcevignes</h3>
-            <p>100% Meunier · Champagne</p>
-          </div>
-          <span class="tag">Karakterfuld</span>
-        </article>
-        <article class="wine-card">
-          <span class="wine-number">02</span>
-          <div>
-            <p class="producer">Stéphane Herbert</p>
-            <h3>Chardonnay</h3>
-            <p>Elegant · mineralsk · præcis</p>
-          </div>
-          <span class="tag">Finesse</span>
-        </article>
-        <article class="wine-card">
-          <span class="wine-number">03</span>
-          <div>
-            <p class="producer">A&amp;C Toullec</p>
-            <h3>Selection</h3>
-            <p>Håndplukket cuvée · Champagne</p>
-          </div>
-          <span class="tag">Terroir</span>
-        </article>
-        <article class="wine-card">
-          <span class="wine-number">04</span>
-          <div>
-            <p class="producer">Couvreur Fondeur</p>
-            <h3>Selection</h3>
-            <p>Lille produktion · stor personlighed</p>
-          </div>
-          <span class="tag">Grower</span>
-        </article>
+    <section class="prices" id="prisliste">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">Prisliste</p>
+          <h2>Aktuelt udvalg</h2>
+        </div>
+        <p class="muted">Sortiment og priser opdateres løbende. Første fulde prisliste kommer her, når leverancen er på plads.</p>
       </div>
-      <p class="note">Priser og endeligt sortiment indsættes, når første leverance er på plads.</p>
+      <div class="price-table" role="table" aria-label="Prisliste">
+        <div class="price-row price-head" role="row">
+          <span>Producent</span><span>Cuvée</span><span>Stil</span><span>Pris</span>
+        </div>
+        <div class="price-row" role="row">
+          <span>Clément Bertrand</span><strong>Narcevignes</strong><span>100% Meunier</span><span class="price-placeholder">Kommer snart</span>
+        </div>
+        <div class="price-row" role="row">
+          <span>Stéphane Herbert</span><strong>Udvalgt cuvée</strong><span>Chardonnay-fokus</span><span class="price-placeholder">Kommer snart</span>
+        </div>
+        <div class="price-row" role="row">
+          <span>A&amp;C Toullec</span><strong>Udvalgt cuvée</strong><span>Terroir</span><span class="price-placeholder">Kommer snart</span>
+        </div>
+        <div class="price-row" role="row">
+          <span>Couvreur Fondeur</span><strong>Udvalgt cuvée</strong><span>Grower Champagne</span><span class="price-placeholder">Kommer snart</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="faq-intro">
+        <p class="section-label">FAQ</p>
+        <h2>Det praktiske</h2>
+        <p class="muted">Vi holder det enkelt. Her er svar på de spørgsmål, vi oftest får.</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Hvordan køber jeg champagne hos jer?</summary>
+          <p>Kontakt os direkte. Vi bekræfter lager, pris og aftaler betaling og levering eller afhentning.</p>
+        </details>
+        <details>
+          <summary>Har I en webshop?</summary>
+          <p>Nej. Kirk &amp; Dørup er bevidst lille og personligt drevet. Vi sælger direkte og holder sortimentet overskueligt.</p>
+        </details>
+        <details>
+          <summary>Kan jeg købe enkelte flasker?</summary>
+          <p>Det afhænger af den enkelte vin og lagerbeholdningen. Skriv til os, så finder vi en løsning.</p>
+        </details>
+        <details>
+          <summary>Kan I levere til virksomheder og firmagaver?</summary>
+          <p>Ja. Vi hjælper gerne med mindre firmaleverancer og værts- eller firmagaver.</p>
+        </details>
+        <details>
+          <summary>Hvordan vælger I producenterne?</summary>
+          <p>Vi besøger producenterne selv og vælger på baggrund af kvalitet, personlighed, relationen til huset og om vi selv har lyst til at drikke vinene.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="newsletter" id="nyhedsbrev">
+      <div>
+        <p class="section-label">Få nyheder i din indbakke</p>
+        <h2>Nye flasker.<br>Ingen støj.</h2>
+      </div>
+      <div class="newsletter-copy">
+        <p>Få besked, når der kommer nye vine hjem, når prislisten opdateres, eller når vi har noget særligt på vej fra Champagne.</p>
+        <form class="newsletter-form" action="#" method="post" onsubmit="return false;">
+          <label class="sr-only" for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="din@email.dk" autocomplete="email" required>
+          <button type="submit">Tilmeld</button>
+        </form>
+        <p class="form-note">Tilmeldingen kobles til vores nyhedsbrevstjeneste i næste trin.</p>
+      </div>
     </section>
 
     <section class="contact" id="kontakt">
       <p class="section-label">Kontakt</p>
       <h2>Vil du høre, hvad vi har på lager?</h2>
-      <p>Vi sælger i små mængder og fortæller gerne om vinene og producenterne bag.</p>
+      <p>Vi fortæller gerne om vinene, producenterne og hvad der passer til anledningen.</p>
       <a class="button light" href="mailto:kredor@gmail.com">Skriv til os</a>
     </section>
   </main>
@@ -113,6 +174,12 @@
     <div>
       <strong>Kirk &amp; Dørup Champagne</strong>
       <p>Champagne – fra huse vi kender.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#om">Om os</a>
+      <a href="#producenter">Producenter</a>
+      <a href="#prisliste">Prisliste</a>
+      <a href="#faq">FAQ</a>
     </div>
     <p>© 2026 Kirk &amp; Dørup</p>
   </footer>
