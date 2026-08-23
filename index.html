@@ -16,29 +16,28 @@
       <img class="brand-logo" src="assets/logo-enkelt.svg" alt="">
       <span class="brand-name">Kirk &amp; Dørup</span>
     </a>
-    <nav aria-label="Primær navigation">
-      <a href="#om">Om os</a>
-      <a href="#producenter">Producenter</a>
-      <a href="#prisliste">Prisliste</a>
-      <a href="#faq">FAQ</a>
-      <a href="#nyhedsbrev">Nyhedsbrev</a>
-    </nav>
+    <button class="menu-toggle" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
+  <nav class="menu-overlay" id="site-menu" aria-label="Primær navigation" aria-hidden="true">
+    <div class="menu-links">
+      <a href="#om"><span>01</span>Om Kirk &amp; Dørup</a>
+      <a href="#producenter"><span>02</span>Producenter</a>
+      <a href="#prisliste"><span>03</span>Prisliste</a>
+      <a href="#faq"><span>04</span>FAQ</a>
+      <a href="#nyhedsbrev"><span>05</span>Nyhedsbrev</a>
+      <a href="#kontakt"><span>06</span>Kontakt</a>
+    </div>
+  </nav>
+
   <main id="top">
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Champagne · København</p>
-        <h1>Champagne fra huse,<br><em>vi kender.</em></h1>
-        <p class="intro">Vi importerer små mængder champagne fra selvstændige producenter, vi selv har besøgt, smagt hos og valgt med omhu.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#producenter">Mød producenterne</a>
-          <a class="button text" href="#prisliste">Se prislisten →</a>
-        </div>
-      </div>
+    <section class="hero" aria-label="Kirk & Dørup Champagne">
       <div class="hero-emblem">
-        <img src="assets/logo-fuld.svg" alt="Kirk & Dørup Champagne – Champagne fra huse vi kender">
+        <img src="assets/logo-fuld.svg" alt="Kirk & Dørup Champagne">
       </div>
+      <a class="hero-scroll" href="#om">Udforsk <span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="statement" id="om">
@@ -231,5 +230,20 @@
     </div>
     <p>© 2026 Kirk &amp; Dørup</p>
   </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu-overlay');
+    const setMenu = (open) => {
+      document.body.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Luk menu' : 'Åbn menu');
+      menu.setAttribute('aria-hidden', String(!open));
+    };
+    toggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setMenu(false);
+    });
+  </script>
 </body>
 </html>
