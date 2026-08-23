@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2590186');
+  </script>
+  <!-- End MailerLite Universal -->
 </head>
 <body>
   <header class="site-header">
@@ -23,11 +32,11 @@
 
   <nav class="menu-overlay" id="site-menu" aria-label="Primær navigation" aria-hidden="true">
     <div class="menu-links">
-      <a href="#om"><span>01</span>Om Kirk &amp; Dørup</a>
-      <a href="#producenter"><span>02</span>Producenter</a>
-      <a href="#prisliste"><span>03</span>Prisliste</a>
-      <a href="#faq"><span>04</span>FAQ</a>
-      <a href="#nyhedsbrev"><span>05</span>Nyhedsbrev</a>
+      <a href="#nyhedsbrev"><span>01</span>Nyhedsbrev</a>
+      <a href="#om"><span>02</span>Om Kirk &amp; Dørup</a>
+      <a href="#producenter"><span>03</span>Producenter</a>
+      <a href="#prisliste"><span>04</span>Prisliste</a>
+      <a href="#faq"><span>05</span>FAQ</a>
       <a href="#kontakt"><span>06</span>Kontakt</a>
     </div>
   </nav>
@@ -38,6 +47,22 @@
         <img src="assets/logo-fuld.svg" alt="Kirk & Dørup Champagne">
       </div>
       <a class="hero-scroll" href="#om">Udforsk <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="newsletter" id="nyhedsbrev">
+      <div>
+        <p class="section-label">Få nyheder i din indbakke</p>
+        <h2>Nye flasker.<br>Ingen støj.</h2>
+      </div>
+      <div class="newsletter-copy">
+        <p>Få besked, når der kommer nye vine hjem, når prislisten opdateres, eller når vi har noget særligt på vej fra Champagne.</p>
+        <form class="newsletter-form" action="#" method="post" onsubmit="return false;">
+          <label class="sr-only" for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="din@email.dk" autocomplete="email" required>
+          <button type="submit">Tilmeld</button>
+        </form>
+        <p class="form-note">Tilmeldingen kobles til vores nyhedsbrevstjeneste i næste trin.</p>
+      </div>
     </section>
 
     <section class="statement" id="om">
@@ -193,21 +218,7 @@
       </div>
     </section>
 
-    <section class="newsletter" id="nyhedsbrev">
-      <div>
-        <p class="section-label">Få nyheder i din indbakke</p>
-        <h2>Nye flasker.<br>Ingen støj.</h2>
-      </div>
-      <div class="newsletter-copy">
-        <p>Få besked, når der kommer nye vine hjem, når prislisten opdateres, eller når vi har noget særligt på vej fra Champagne.</p>
-        <form class="newsletter-form" action="#" method="post" onsubmit="return false;">
-          <label class="sr-only" for="email">E-mail</label>
-          <input id="email" name="email" type="email" placeholder="din@email.dk" autocomplete="email" required>
-          <button type="submit">Tilmeld</button>
-        </form>
-        <p class="form-note">Tilmeldingen kobles til vores nyhedsbrevstjeneste i næste trin.</p>
-      </div>
-    </section>
+
 
     <section class="contact" id="kontakt">
       <p class="section-label">Kontakt</p>
