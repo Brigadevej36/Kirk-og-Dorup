@@ -32,9 +32,9 @@
 
   <nav class="menu-overlay" id="site-menu" aria-label="Primær navigation" aria-hidden="true">
     <div class="menu-links">
-      <a href="#nyhedsbrev"><span>01</span>Nyhedsbrev</a>
-      <a href="#om"><span>02</span>Om Kirk &amp; Dørup</a>
-      <a href="#producenter"><span>03</span>Producenter</a>
+      <a href="#om"><span>01</span>Om Kirk &amp; Dørup</a>
+      <a href="#producenter"><span>02</span>Producenter</a>
+      <a href="#nyhedsbrev"><span>03</span>Nyhedsbrev</a>
       <a href="#prisliste"><span>04</span>Prisliste</a>
       <a href="#faq"><span>05</span>FAQ</a>
       <a href="#kontakt"><span>06</span>Kontakt</a>
@@ -47,17 +47,6 @@
         <img src="assets/logo-fuld.svg" alt="Kirk & Dørup Champagne">
       </div>
       <a class="hero-scroll" href="#om">Udforsk <span aria-hidden="true">↓</span></a>
-    </section>
-
-    <section class="newsletter" id="nyhedsbrev">
-      <div>
-        <p class="section-label">Få nyheder i din indbakke</p>
-        <h2>Nye flasker.<br>Ingen støj.</h2>
-      </div>
-      <div class="newsletter-copy">
-        <p>Få besked, når der kommer nye vine hjem, når prislisten opdateres, eller når vi har noget særligt på vej fra Champagne.</p>
-        <div class="ml-embedded" data-form="IZpg2M"></div>
-      </div>
     </section>
 
     <section class="statement" id="om">
@@ -123,7 +112,9 @@
               <figcaption>Udvalgte cuvéer fra Clément Bertrand</figcaption>
             </figure>
           </div>
-          <div class="cuvee-grid">
+          <details class="cuvee-disclosure">
+            <summary><span class="summary-open">Se champagnerne</span><span class="summary-close">Skjul champagnerne</span><span class="summary-icon" aria-hidden="true">↓</span></summary>
+            <div class="cuvee-grid">
             <section class="cuvee">
               <p class="cuvee-number">01</p>
               <h4>Reflet</h4>
@@ -152,7 +143,8 @@
                 <div><dt>Dosage</dt><dd>0 g/l</dd></div>
               </dl>
             </section>
-          </div>
+            </div>
+          </details>
         </article>
         <article class="producer-card">
           <span class="card-number">02</span>
@@ -184,7 +176,9 @@
               <figcaption>Reservevine i de dybe kældre</figcaption>
             </figure>
           </div>
-          <div class="cuvee-grid">
+          <details class="cuvee-disclosure">
+            <summary><span class="summary-open">Se champagnerne</span><span class="summary-close">Skjul champagnerne</span><span class="summary-icon" aria-hidden="true">↓</span></summary>
+            <div class="cuvee-grid">
             <section class="cuvee">
               <p class="cuvee-number">01</p>
               <h4>Blanc de Noirs</h4>
@@ -211,7 +205,8 @@
                 <div><dt>Dosage</dt><dd>3 g/l</dd></div>
               </dl>
             </section>
-          </div>
+            </div>
+          </details>
         </article>
         <article class="producer-card">
           <span class="card-number">04</span>
@@ -219,6 +214,17 @@
           <h3>Couvreur Fondeur</h3>
           <p>Lille produktion, personlig stil og vine med både energi og dybde.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="newsletter" id="nyhedsbrev">
+      <div>
+        <p class="section-label">Få nyheder i din indbakke</p>
+        <h2>Nye flasker.<br>Ingen støj.</h2>
+      </div>
+      <div class="newsletter-copy">
+        <p>Få besked, når der kommer nye vine hjem, når prislisten opdateres, eller når vi har noget særligt på vej fra Champagne.</p>
+        <div class="ml-embedded" data-form="IZpg2M"></div>
       </div>
     </section>
 
@@ -325,8 +331,20 @@
     };
     toggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
     menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    const cuveeDisclosures = document.querySelectorAll('.cuvee-disclosure');
+    cuveeDisclosures.forEach(disclosure => {
+      disclosure.addEventListener('toggle', () => {
+        if (!disclosure.open) return;
+        cuveeDisclosures.forEach(other => {
+          if (other !== disclosure) other.open = false;
+        });
+      });
+    });
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') setMenu(false);
+      if (event.key === 'Escape') {
+        setMenu(false);
+        cuveeDisclosures.forEach(disclosure => disclosure.open = false);
+      }
     });
   </script>
 </body>
