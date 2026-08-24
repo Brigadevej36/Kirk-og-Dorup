@@ -380,10 +380,16 @@
     const newsletterRoot = document.querySelector('.ml-embedded');
     const localizeNewsletter = () => {
       const emailInput = newsletterRoot?.querySelector('input[type="email"]');
-      if (!emailInput) return;
-      emailInput.placeholder = 'E-mailadresse';
-      emailInput.setAttribute('aria-label', 'E-mailadresse');
-      emailInput.setAttribute('autocomplete', 'email');
+      if (emailInput) {
+        emailInput.placeholder = 'E-mailadresse';
+        emailInput.setAttribute('aria-label', 'E-mailadresse');
+        emailInput.setAttribute('autocomplete', 'email');
+      }
+      newsletterRoot?.querySelectorAll('p, span').forEach(element => {
+        if (element.textContent.trim().toLowerCase().startsWith('vi skriver kun, når det er vigtigt')) {
+          element.remove();
+        }
+      });
     };
     if (newsletterRoot) {
       localizeNewsletter();
