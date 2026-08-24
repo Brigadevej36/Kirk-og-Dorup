@@ -302,12 +302,12 @@
     </section>
 
     <section class="newsletter" id="nyhedsbrev">
-      <div>
+      <div class="newsletter-inner">
         <p class="section-label">Få nyheder i din indbakke</p>
-        <h2>Nye flasker.<br>Ingen støj.</h2>
-      </div>
-      <div class="newsletter-copy">
-        <div class="ml-embedded" data-form="IZpg2M"></div>
+        <h2>Nye flasker. Ingen støj.</h2>
+        <div class="newsletter-copy">
+          <div class="ml-embedded" data-form="IZpg2M"></div>
+        </div>
       </div>
     </section>
 
@@ -442,6 +442,11 @@
       }
       newsletterRoot?.querySelectorAll('p, span').forEach(element => {
         if (element.textContent.trim().toLowerCase().startsWith('vi skriver kun, når det er vigtigt')) {
+          element.remove();
+        }
+      });
+      newsletterRoot?.querySelectorAll('h4').forEach(element => {
+        if (element.textContent.trim().toLowerCase().startsWith('modtag champagnepost')) {
           element.remove();
         }
       });
