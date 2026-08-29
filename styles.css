@@ -84,6 +84,7 @@ h1 em{color:var(--gold);font-weight:500}
 .producer-intro .producer-overview{grid-template-columns:1fr;gap:28px;padding-bottom:0}
 .producer-lead-image{margin:0;background:var(--green-dark);overflow:hidden}
 .producer-lead-image img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.72) sepia(.1) saturate(.72) contrast(.97);transition:filter .35s ease,transform .5s ease}
+.tange-lead-image img{aspect-ratio:4/3}
 .producer-lead-image:hover img{filter:grayscale(.48) sepia(.08) saturate(.86);transform:scale(1.012)}
 .producer-lead-image figcaption{padding:12px 2px 0;background:var(--cream);color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.14em}
 .producer-overview h4,.cuvee h4{font-family:"Playfair Display",serif;font-size:25px;font-weight:500;margin:0 0 16px}
