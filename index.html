@@ -131,6 +131,14 @@
         <p class="muted">Små, selvstændige producenter med hver deres stil, terroir og historie.</p>
       </div>
       <div class="producer-grid">
+        <details class="producer-house">
+          <summary class="producer-house-summary">
+            <span class="house-number">01</span>
+            <span class="house-name">Champagne Clément Bertrand</span>
+            <span class="house-location">Prouilly · Montagne de Reims</span>
+            <span class="house-style">Præcis · gastronomisk · terroirpræget</span>
+            <span class="house-action"><span class="house-open">Åbn</span><span class="house-close">Luk</span><span aria-hidden="true">↓</span></span>
+          </summary>
         <article class="producer-card featured">
           <span class="card-number">01</span>
           <p class="producer-kicker">Prouilly · Montagne de Reims</p>
@@ -189,6 +197,15 @@
             </div>
           </details>
         </article>
+        </details>
+        <details class="producer-house">
+          <summary class="producer-house-summary">
+            <span class="house-number">02</span>
+            <span class="house-name">Champagne Tange-Gérard</span>
+            <span class="house-location">Soulières · Côte des Blancs</span>
+            <span class="house-style">Chardonnay · økologisk · lang kældertid</span>
+            <span class="house-action"><span class="house-open">Åbn</span><span class="house-close">Luk</span><span aria-hidden="true">↓</span></span>
+          </summary>
         <article class="producer-card featured">
           <span class="card-number">02</span>
           <p class="producer-kicker">Soulières · Côte des Blancs</p>
@@ -247,6 +264,15 @@
             </div>
           </details>
         </article>
+        </details>
+        <details class="producer-house">
+          <summary class="producer-house-summary">
+            <span class="house-number">03</span>
+            <span class="house-name">Champagne A&amp;C Toullec</span>
+            <span class="house-location">Rilly-la-Montagne · Premier Cru</span>
+            <span class="house-style">Klassisk · præcis · generøs</span>
+            <span class="house-action"><span class="house-open">Åbn</span><span class="house-close">Luk</span><span aria-hidden="true">↓</span></span>
+          </summary>
         <article class="producer-card featured">
           <span class="card-number">03</span>
           <p class="producer-kicker">Rilly-la-Montagne · Premier Cru</p>
@@ -303,12 +329,22 @@
             </div>
           </details>
         </article>
+        </details>
+        <details class="producer-house">
+          <summary class="producer-house-summary">
+            <span class="house-number">04</span>
+            <span class="house-name">Couvreur Fondeur</span>
+            <span class="house-location">Champagne</span>
+            <span class="house-style">Lille produktion · energi · dybde</span>
+            <span class="house-action"><span class="house-open">Åbn</span><span class="house-close">Luk</span><span aria-hidden="true">↓</span></span>
+          </summary>
         <article class="producer-card">
           <span class="card-number">04</span>
           <p class="producer-kicker">Champagne</p>
           <h3>Couvreur Fondeur</h3>
           <p>Lille produktion, personlig stil og vine med både energi og dybde.</p>
         </article>
+        </details>
       </div>
     </section>
 
@@ -466,6 +502,15 @@
     };
     toggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
     menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    const producerHouses = document.querySelectorAll('.producer-house');
+    producerHouses.forEach(house => {
+      house.addEventListener('toggle', () => {
+        if (!house.open) return;
+        producerHouses.forEach(other => {
+          if (other !== house) other.open = false;
+        });
+      });
+    });
     const cuveeDisclosures = document.querySelectorAll('.cuvee-disclosure');
     cuveeDisclosures.forEach(disclosure => {
       disclosure.addEventListener('toggle', () => {
@@ -501,6 +546,7 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') {
         setMenu(false);
+        producerHouses.forEach(house => house.open = false);
         cuveeDisclosures.forEach(disclosure => disclosure.open = false);
       }
     });
