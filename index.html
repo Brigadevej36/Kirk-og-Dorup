@@ -505,7 +505,10 @@
     const producerHouses = document.querySelectorAll('.producer-house');
     producerHouses.forEach(house => {
       house.addEventListener('toggle', () => {
-        if (!house.open) return;
+        if (!house.open) {
+          house.querySelectorAll('.cuvee-disclosure').forEach(disclosure => disclosure.open = false);
+          return;
+        }
         producerHouses.forEach(other => {
           if (other !== house) other.open = false;
         });
