@@ -342,3 +342,16 @@ body.menu-open{overflow:hidden}
   .hero-emblem img,.hero-scroll span{animation:none}
   .menu-overlay,.menu-toggle span{transition:none}
 }
+
+/* Direct access to prices and clear case purchasing information */
+.site-header{position:fixed;pointer-events:none}
+.menu-toggle{pointer-events:auto;background:var(--green-dark);box-shadow:0 2px 12px rgba(15,46,39,.16)}
+.hero{padding-bottom:150px}
+.hero-shortcuts{position:absolute;left:24px;right:24px;bottom:24px;display:flex;flex-direction:column;align-items:center;gap:12px;z-index:2}
+.hero-prices{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:44px;padding:10px 16px;border-bottom:1px solid rgba(200,170,106,.55);color:var(--cream);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.hero-prices:hover{color:var(--gold)}
+.hero-shortcuts .hero-scroll{position:static;transform:none;min-height:44px;justify-content:center}
+.price-terms{max-width:720px;margin:24px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
+.price-row .case-price{display:inline-block;color:var(--ink);font-size:14px;margin-top:4px}
+.hero-prices:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+@media(max-width:800px){.hero{padding-bottom:150px}}
