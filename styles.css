@@ -371,7 +371,7 @@ body.menu-open{overflow:hidden}
 
 /* Consistent product navigation, personal story and newsletter invitations */
 .header-newsletter{pointer-events:auto;margin-left:auto;margin-right:16px;padding:12px 16px;border:1px solid var(--gold);border-radius:3px;background:var(--green-dark);color:var(--cream);font-size:12px;letter-spacing:.03em}
-.menu-toggle{margin-left:0;flex-shrink:0}
+.menu-toggle{margin-left:auto;flex-shrink:0}
 .newsletter-invitation{margin:0 clamp(24px,8vw,130px) 80px;padding:30px 0;border-top:1px solid var(--gold);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:30px}
 .newsletter-invitation .section-label{margin-bottom:10px}.newsletter-invitation h2{font-family:"Playfair Display",serif;font-weight:500;font-size:32px;margin:0 0 12px}.newsletter-invitation p:last-child{max-width:610px;color:var(--muted);line-height:1.7;margin:0}.newsletter-invitation .button{flex-shrink:0;border:1px solid var(--gold)}
 .newsletter-reassurance{font-size:12px;color:rgba(244,239,229,.72);margin:18px 0 0}.newsletter-promise{line-height:1.7}
