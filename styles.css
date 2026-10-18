@@ -387,3 +387,31 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .cuvee-image:not(:has(figcaption)){padding-bottom:26px}
 
 .price-cuvee-link{display:block;padding:6px 0}
+
+/* A continuous journey from the wines to the people behind them. */
+.hero{min-height:0;height:auto;gap:0;padding:76px 24px 140px}
+.hero-emblem{padding:0}
+.hero-emblem img{width:min(42svh,390px,66vw)}
+.hero:before{width:min(62svh,570px,84vw)}
+.statement .founders-intro{margin-top:36px;gap:clamp(28px,5vw,64px)}
+.statement .founders-intro p{font-size:16px;line-height:1.8;margin:0 0 20px}
+.statement .founders-intro p:last-child{margin-bottom:0}
+.statement .field-notes{padding:0;margin-top:52px}
+.statement .field-notes-grid{height:min(54vw,580px)}
+.contact-grid{grid-template-columns:1fr}
+.contact-card{padding:38px 0 42px;max-width:760px}
+.contact-card>p:not(.contact-kicker){min-height:0}
+.contact-partners{max-width:1120px;margin:0 auto;border-bottom:1px solid rgba(200,170,106,.35)}
+.contact-partners summary{padding:22px 36px 22px 0;font-family:"DM Sans",sans-serif;font-size:12px;letter-spacing:.08em;color:var(--gold)}
+.contact-partners summary:after{top:17px}
+.contact-partners p{padding:0;margin:0 0 18px;color:rgba(244,239,229,.7);font-size:14px}
+.contact-partners>div{padding:4px 0 26px}
+.contact-partners a{font-size:13px;text-decoration:underline;text-underline-offset:4px;color:var(--gold)}
+@media(max-width:800px){
+.hero{padding:80px 20px 138px}
+.hero-emblem img{width:min(40svh,66vw,330px)}
+.statement{padding:64px 24px}
+.statement .founders-intro{margin-top:28px}
+.statement .field-notes{margin-top:36px}
+.statement .field-notes-grid{height:auto;grid-template-rows:56vw 54vw}
+}
