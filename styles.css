@@ -415,3 +415,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .statement .field-notes{margin-top:36px}
 .statement .field-notes-grid{height:auto;grid-template-rows:56vw 54vw}
 }
+
+/* A tighter, consistent reading rhythm on phones. */
+@media(max-width:800px){
+  .producers,.prices,.faq,.statement,.newsletter,.contact{padding-top:48px;padding-bottom:48px}
+  .bottle-feature{padding-bottom:48px;gap:24px}
+  .section-heading{margin-bottom:30px}
+  .section-heading .muted{margin-bottom:0}
+  .section-label{margin-bottom:18px}
+  .section-next{margin-top:28px;min-height:44px;justify-content:center}
+  .faq{gap:28px}
+  .faq .section-next{margin-top:0}
+  .faq-intro .muted{margin-bottom:0}
+  .statement .founders-intro{margin-top:24px;gap:24px}
+  .statement .field-notes{margin-top:28px}
+  .field-notes-heading{padding:22px 0}
+  .price-action-wrap{margin-top:24px}
+  .contact-card{padding-top:28px;padding-bottom:30px}
+}
