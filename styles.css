@@ -433,3 +433,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .price-action-wrap{margin-top:24px}
   .contact-card{padding-top:28px;padding-bottom:30px}
 }
+
+/* Matched portrait bottle photographs, full bottle visible on all screens. */
+#toullec-assemblage .cuvee-image img,
+#couvreur-millesime .cuvee-image img{width:min(100%,420px);height:auto;aspect-ratio:3/4;object-fit:contain;margin-inline:auto;filter:none}
