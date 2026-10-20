@@ -63,7 +63,7 @@
     .price-row .price-highlight{display:block;width:fit-content;margin-top:8px;padding:5px 9px;border:1px solid var(--gold);border-radius:3px;color:var(--green);font-family:"DM Sans",sans-serif;font-size:12px;font-weight:600;line-height:1.5}
     .price-row .price-growing{display:block;margin-top:8px;color:var(--green);font-size:12px;font-weight:500;line-height:1.6}
   </style>
-<link href="styles.css?v=photos181026-20261018-mobile-spacing" rel="stylesheet"/>
+<link href="styles.css?v=20261020-smooth-producers" rel="stylesheet"/>
 <style>
 .footer-legal{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:flex-start;gap:4px 24px;border-top:1px solid var(--line);padding-top:12px;text-transform:none;letter-spacing:normal}
 .footer-legal .legal-disclosure{border:0;min-width:0;max-width:100%}
@@ -567,23 +567,65 @@
     toggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
     menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
     const producerHouses = document.querySelectorAll('.producer-house');
-    let productNavigation = false;
     const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const houseAnimations = new WeakMap();
+    const setHouseOpen = (house, open) => {
+      const previous = houseAnimations.get(house);
+      const startHeight = house.getBoundingClientRect().height;
+      if (previous) {
+        previous.animation.cancel();
+        previous.resolve();
+        houseAnimations.delete(house);
+      }
+      house.style.height = '';
+      house.style.overflow = '';
+      if (reducedMotion() || typeof house.animate !== 'function') {
+        house.open = open;
+        return Promise.resolve();
+      }
+      // Measure both states before painting; keep native details semantics.
+      house.open = open;
+      const endHeight = house.getBoundingClientRect().height;
+      house.open = true;
+      house.style.height = `${startHeight}px`;
+      house.style.overflow = 'hidden';
+      return new Promise(resolve => {
+        const animation = house.animate(
+          { height: [`${startHeight}px`, `${endHeight}px`] },
+          { duration: 420, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'forwards' }
+        );
+        houseAnimations.set(house, { animation, resolve, open });
+        animation.onfinish = () => {
+          house.open = open;
+          house.style.height = '';
+          house.style.overflow = '';
+          animation.cancel();
+          houseAnimations.delete(house);
+          resolve();
+        };
+      });
+    };
+    producerHouses.forEach(house => {
+      house.querySelector('summary').addEventListener('click', event => {
+        event.preventDefault();
+        const pending = houseAnimations.get(house);
+        setHouseOpen(house, !(pending ? pending.open : house.open));
+      });
+    });
     const revealProduct = (hash, scroll = true) => {
       const target = document.getElementById(hash.replace(/^#/, ''));
       if (!target?.classList.contains('cuvee')) return false;
-      productNavigation = true;
-      producerHouses.forEach(house => { house.open = house.contains(target); });
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        if (scroll) { target.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start' }); target.focus({ preventScroll: true }); }
-        productNavigation = false;
-      }));
+      const house = target.closest('.producer-house');
+      const ready = house.open && !houseAnimations.has(house)
+        ? Promise.resolve() : setHouseOpen(house, true);
+      ready.then(() => {
+        if (scroll) {
+          target.scrollIntoView({ behavior: reducedMotion() ? 'instant' : 'smooth', block: 'start' });
+          target.focus({ preventScroll: true });
+        }
+      });
       return true;
     };
-    producerHouses.forEach(house => house.addEventListener('toggle', () => {
-      if (!house.open || productNavigation) return;
-      producerHouses.forEach(other => { if (other !== house) other.open = false; });
-    }));
     document.querySelectorAll('.price-cuvee-link').forEach(link => link.addEventListener('click', event => {
       event.preventDefault();
       history.pushState(null, '', link.hash);
@@ -620,7 +662,7 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') {
         setMenu(false);
-        producerHouses.forEach(house => house.open = false);
+        producerHouses.forEach(house => setHouseOpen(house, false));
       }
     });
   </script>
