@@ -76,6 +76,10 @@
 .footer-legal .legal-copy p{max-width:none;padding:0;margin:0 0 14px;color:var(--ink);line-height:1.75}
 .footer-legal .legal-copy a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold)}
 .footer-legal .legal-copy .legal-updated{color:var(--muted);font-size:12px}
+/* Keep the lineup photo hidden and let the introduction use the available space. */
+.bottle-feature-image[hidden]{display:none}
+.bottle-feature{grid-template-columns:1fr;padding-top:48px}
+.bottle-feature-copy{max-width:680px}
 </style>
 </head>
 <body>
@@ -113,7 +117,7 @@
 </section>
 
 <section aria-labelledby="bottle-feature-title" class="bottle-feature" id="udvalg">
-<figure class="bottle-feature-image">
+<figure class="bottle-feature-image" hidden>
 <img alt="Vores seks champagner fra Tange-Gérard, Clément Bertrand, A&amp;C Toullec og Couvreur Fondeur" loading="lazy" src="assets/lineup-originale-191026.webp" width="1132" height="830" style="filter:none;aspect-ratio:auto;height:auto"/>
 </figure>
 <div class="bottle-feature-copy">
