@@ -77,6 +77,12 @@
 .footer-legal .legal-copy a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold)}
 .footer-legal .legal-copy .legal-updated{color:var(--muted);font-size:12px}
 </style>
+<style id="christmas-invitation-layout">
+.bottle-feature.christmas-invitation{grid-template-columns:minmax(0,1fr);padding-inline:0}
+.christmas-invitation .bottle-feature-image{width:100%}
+.christmas-invitation .bottle-feature-copy{box-sizing:content-box;padding-inline:clamp(24px,8vw,130px)}
+@media(max-width:800px){.christmas-invitation .bottle-feature-copy{box-sizing:border-box;max-width:none;padding-inline:24px}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -122,6 +128,7 @@
   var expires = Date.parse('2026-11-21T00:00:00+01:00');
   function updatePhoto() {
     var active = Date.now() < expires;
+    photo.closest('.bottle-feature').classList.toggle('christmas-invitation', active);
     photo.src = active ? 'assets/julechampagne-20-november-2026.jpeg' : original.src;
     photo.alt = active ? 'Julechampagne – smag vores små udvalgte huse fredag 20. november 2026 kl. 16:30, Højbovej 25, Valby. Adventskalender med fire flasker: 1.275 kr. Tilmelding: kontakt@kirkogdorup.dk.' : original.alt;
     photo.width = active ? 480 : original.width;
