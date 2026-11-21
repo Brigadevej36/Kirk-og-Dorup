@@ -121,24 +121,7 @@
 <section aria-labelledby="bottle-feature-title" class="bottle-feature" id="udvalg">
 <figure class="bottle-feature-image">
 <img alt="Vores seks champagner fra Tange-Gérard, Clément Bertrand, A&amp;C Toullec og Couvreur Fondeur" loading="lazy" src="assets/udvalg-seks-champagner.svg" width="1456" height="1092" style="filter:none;aspect-ratio:auto;height:auto"/>
-<script id="christmas-homepage-photo">
-(function () {
-  var photo = document.querySelector('.bottle-feature-image img');
-  var original = {src: photo.getAttribute('src'), alt: photo.alt, width: photo.width, height: photo.height};
-  var expires = Date.parse('2026-11-21T00:00:00+01:00');
-  function updatePhoto() {
-    var active = Date.now() < expires;
-    photo.closest('.bottle-feature').classList.toggle('christmas-invitation', active);
-    photo.src = active ? 'assets/julechampagne-20-november-2026.jpeg' : original.src;
-    photo.alt = active ? 'Julechampagne – smag vores små udvalgte huse fredag 20. november 2026 kl. 16:30, Højbovej 25, Valby. Adventskalender med fire flasker: 1.275 kr. Tilmelding: kontakt@kirkogdorup.dk.' : original.alt;
-    photo.width = active ? 480 : original.width;
-    photo.height = active ? 718 : original.height;
-  }
-  updatePhoto();
-  setInterval(updatePhoto, 60000);
-  window.addEventListener('pageshow', updatePhoto);
-})();
-</script>
+
 </figure>
 <div class="bottle-feature-copy">
 <p class="section-label">Vores udvalg</p>
